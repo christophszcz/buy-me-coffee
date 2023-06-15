@@ -19,8 +19,13 @@
         </div>
     </mat-tab>
     <mat-tab label="Recurring Donation">
-        <button mat-raised-button color="primary">Donate $2 / month</button>
-        <button mat-raised-button color="primary">Donate $</button>
+        <div class="button-container">
+            <button class="bmc-recurring-button" mat-raised-button color="primary">Donate $2 / month</button>
+            <div class="bmc-custom-monthly-container">
+                <button class="bmc-recurring-button" mat-raised-button color="primary">Donate $</button>
+                <input type="number"> / month
+            </div>
+        </div>
     </mat-tab>
 </mat-tab-group>
 
