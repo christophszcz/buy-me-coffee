@@ -14,20 +14,24 @@ mat-tab-group {
     margin: 5px 25% 5px 25%;
 }
 
+.support-body-text,
+.website-link,
 .dev-info {
+    color: #fff;
     font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+.dev-info {
     font-size: 19px;
     text-align: right;
     position: relative;
     cursor: pointer;
     right: 10px;
-    color: #000;
 }
 
 .website-link {
     font-weight: 700;
     text-decoration: none;
-    color: #000;
 }
 
 footer {
