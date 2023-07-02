@@ -29,8 +29,18 @@
                     color="primary">
                 Donate $5
             </button>
-            <button class="bmc-one-time-button" mat-raised-button color="primary">Donate $10</button>
-            <button class="bmc-one-time-button" mat-raised-button color="primary">Donate $20</button>
+            <button (click)="donate(10)"
+                    class="bmc-one-time-button"
+                    mat-raised-button 
+                    color="primary">
+                Donate $10
+            </button>
+            <button (click)="donate(20)"
+                    class="bmc-one-time-button"
+                    mat-raised-button 
+                    color="primary">
+                Donate $20
+            </button>
         </div>
     </mat-tab>
     <mat-tab label="Recurring Donation">
