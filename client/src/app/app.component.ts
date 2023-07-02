@@ -7,5 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'buy-me-coffee';
-  value: any;
+  value: number = 0;
+
+  constructor() {}
+
+  donate(value: number) {
+    this.value = value;
+    console.log('donate', this.value);
+  }
+    
 }

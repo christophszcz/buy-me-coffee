@@ -17,8 +17,18 @@
 <mat-tab-group  dynamicHeight animationDuration="1500ms">
     <mat-tab label="One Time Donation">
         <div class="button-container">
-            <button class="bmc-one-time-button" mat-raised-button color="primary">Donate $1</button>
-            <button class="bmc-one-time-button" mat-raised-button color="primary">Donate $5</button>
+            <button (click)="donate(1)"
+                    class="bmc-one-time-button" 
+                    mat-raised-button 
+                    color="primary">
+                Donate $1
+            </button>
+            <button (click)="donate(5)"
+                    class="bmc-one-time-button" 
+                    mat-raised-button 
+                    color="primary">
+                Donate $5
+            </button>
             <button class="bmc-one-time-button" mat-raised-button color="primary">Donate $10</button>
             <button class="bmc-one-time-button" mat-raised-button color="primary">Donate $20</button>
         </div>
