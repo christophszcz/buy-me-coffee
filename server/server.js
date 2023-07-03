@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 app.use(express.json()); 
@@ -15,3 +16,7 @@ const donationItems = new Map([
 ]);
 
 app.listen(3000, () => console.log('Server running on port 3000'));
+
+app.post('/create-checkout-session', async (req, res) => {
+    res.json({ url: 'Hi' });
+});
