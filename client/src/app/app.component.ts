@@ -15,10 +15,11 @@ export class AppComponent {
   donate(value: number) {
     this.value = value;
     console.log('donate', this.value);
+    this.processPayment();
   }
 
   processPayment() {
-    const url = 'http://localhost:3000/payment';
+    const url = 'http://localhost:3000/create-checkout-session';
     const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' };
     const body = { title: 'Angular POST Request Example' };
 
