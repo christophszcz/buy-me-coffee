@@ -20,7 +20,12 @@ app.listen(3000, () => console.log('Server running on port 3000'));
 
 app.post('/create-checkout-session', async (req, res) => {
     try {
-        const session = await stripe.checkout.sessions.create({});
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            mode: 'payment',
+            success_url: `${process.env.SERVER_URL}/success.html`,
+            cancel_url: `${process.env.SERVER_URL}/cancel.html`,
+        });
         res.json({ url: session.url });
     } catch (err) {
         res.status(500).json({ statusCode: 500, message: err.message });
