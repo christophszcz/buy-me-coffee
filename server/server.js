@@ -19,5 +19,11 @@ const donationItems = new Map([
 app.listen(3000, () => console.log('Server running on port 3000'));
 
 app.post('/create-checkout-session', async (req, res) => {
-    res.json({ url: 'Hi' });
+    try {
+        const session = await stripe.checkout.sessions.create({});
+        res.json({ url: session.url });
+    } catch (err) {
+        res.status(500).json({ statusCode: 500, message: err.message });
+        console.error(err);
+    }
 });
