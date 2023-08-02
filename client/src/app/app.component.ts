@@ -18,13 +18,17 @@ export class AppComponent {
     this.processPayment();
   }
 
-  processPayment() {
+  processPayment(): void {
     const url = 'http://localhost:3000/create-checkout-session';
-    const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' };
-    const body = { title: 'Angular POST Request Example' };
+    const headers = { 'Content-Type': 'application/json' };
+    const body = JSON.stringify({
+      items: [ 
+        { id: 1, quantity: 1 }
+      ]
+    });
 
     this._http.post<any>(url, body, {headers}).subscribe(data => {
       console.log(data);
-    })
+    });
   }  
 }
