@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { catchError, Observable, of } from 'rxjs';
+
 import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,11 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'buy-me-coffee';
   value: number = 0;
+  errorMessage: any;
 
   constructor(private _http: HttpClient) {}
 
-  donate(value: number) {
+  donate(value: number): void {
     this.value = value;
     console.log('donate', this.value);
     this.processPayment();
@@ -27,8 +30,15 @@ export class AppComponent {
       ]
     });
 
-    this._http.post<any>(url, body, {headers}).subscribe(data => {
-      console.log(data);
-    });
+    this._http.post<any>(url, body, {headers})
+      .pipe(catchError((error: any, caught: Observable<any>): Observable<any> => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', error);
+        return of();
+      }))
+      .subscribe(data => {
+        console.log(data);
+        //this.value = data.value;
+      });
   }  
 }
