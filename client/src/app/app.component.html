@@ -47,10 +47,16 @@
         <div class="button-container">
             <button class="bmc-recurring-button" mat-raised-button color="primary">Donate $2 / month</button>
             <div class="bmc-custom-monthly-container">
-                <button class="bmc-recurring-button" mat-raised-button color="primary">Donate $</button>
+                <button class="bmc-recurring-button bmc-recurring-custom-button" mat-raised-button color="primary">Donate $</button>
                 <mat-form-field class="example-full-width">
-                    <input matInput type="number" value="">
-                </mat-form-field> / month
+                    <input matInput
+                           class="bmc-custom-monthly-input"
+                           type="number" 
+                           value="">
+                </mat-form-field> 
+                <div class="bmc-per-month-text">
+                    / month
+                </div>
             </div>
         </div>
     </mat-tab>
