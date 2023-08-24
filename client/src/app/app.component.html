@@ -44,20 +44,27 @@
         </div>
     </mat-tab>
     <mat-tab label="Recurring Donation">
-        <div class="button-container">
-            <button class="bmc-recurring-button" mat-raised-button color="primary">Donate $2 / month</button>
-            <div class="bmc-custom-monthly-container">
-                <button class="bmc-recurring-button bmc-recurring-custom-button" mat-raised-button color="primary">Donate $</button>
-                <mat-form-field class="example-full-width">
-                    <input matInput
-                           class="bmc-custom-monthly-input"
-                           type="number" 
-                           value="">
-                </mat-form-field> 
-                <div class="bmc-per-month-text">
-                    / month
-                </div>
-            </div>
+        <button class="bmc-recurring-button" mat-raised-button color="primary">Donate $2 / month</button>
+        <div class="bmc-custom-monthly-container">
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td> 
+                    <button class="bmc-recurring-button bmc-recurring-custom-button" 
+                            mat-raised-button 
+                            color="primary">
+                        Donate $
+                    </button>
+                 </td>
+                <td>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Per Month</mat-label>
+                        <input matInput
+                               class="bmc-custom-monthly-input"
+                               type="number" 
+                               value="">
+                    </mat-form-field>
+                </td>
+              </tr>
+            </table>
         </div>
     </mat-tab>
 </mat-tab-group>
